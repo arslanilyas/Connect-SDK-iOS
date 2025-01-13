@@ -98,6 +98,13 @@ Pod::Spec.new do |s|
     sp.preserve_paths =  'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
   end
 
+  s.subspec 'no-arc' do |sp|
+    sp.source_files = non_arc_files
+    sp.requires_arc = false
+    # disable all warnings from asi-http-request
+    sp.compiler_flags = '-w'
+  end
+
   s.subspec 'GoogleCast' do |sp|
     cast_dir = "modules/google-cast"
 
@@ -106,9 +113,11 @@ Pod::Spec.new do |s|
     sp.exclude_files = "#{cast_dir}/*Tests/**/*"
     sp.private_header_files = "#{cast_dir}/**/*_Private.h"
 
-    # Preserve the google-cast directory
-    sp.preserve_paths = "#{cast_dir}"
-end
-
-
+    cast_version = "2.7.1"
+    sp.dependency "google-cast-sdk", cast_version
+    sp.framework = "GoogleCast"
+    sp.xcconfig = {
+        "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/google-cast-sdk/GoogleCastSDK-#{cast_version}-Release",
+    }
+  end
 end
