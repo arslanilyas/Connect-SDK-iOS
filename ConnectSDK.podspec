@@ -86,15 +86,6 @@ Pod::Spec.new do |s|
   non_arc_files =
     "core/Frameworks/asi-http-request/External/Reachability/*.{h,m}",
     "core/Frameworks/asi-http-request/Classes/*.{h,m}"
-    
-  s.subspec 'GoogleCast' do |sp|
-
-    sp.dependency 'ConnectSDK/Core'
-    sp.source_files = "modules/google-cast/**/*.{h,m}"
-    sp.exclude_files = "modules/google-cast/*Tests/**/*"
-    sp.private_header_files = "modules/google-cast/**/*_Private.h"
-   
-  end
 
   s.subspec 'Core' do |sp|
     sp.source_files  = "ConnectSDKDefaultPlatforms.h", "core/**/*.{h,m}"
@@ -112,5 +103,21 @@ Pod::Spec.new do |s|
     sp.requires_arc = false
     # disable all warnings from asi-http-request
     sp.compiler_flags = '-w'
+  end
+
+  s.subspec 'GoogleCast' do |sp|
+    cast_dir = "modules/google-cast"
+
+    sp.dependency 'ConnectSDK/Core'
+    sp.source_files = "#{cast_dir}/*.{h,m}"
+    sp.exclude_files = "#{cast_dir}/*Tests/**/*"
+    sp.private_header_files = "#{cast_dir}/*_Private.h"
+
+    cast_version = "2.7.1"
+    sp.dependency "google-cast-sdk", cast_version
+    sp.framework = "GoogleCast"
+    sp.xcconfig = {
+        "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/google-cast-sdk/GoogleCastSDK-#{cast_version}-Release",
+    }
   end
 end
