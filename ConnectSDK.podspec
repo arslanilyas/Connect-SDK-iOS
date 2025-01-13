@@ -94,17 +94,19 @@ Pod::Spec.new do |s|
     sp.requires_arc = true
 
     sp.dependency 'ConnectSDK/no-arc'
+    sp.dependency 'ConnectSDK/GoogleCast'
     sp.ios.vendored_frameworks = 'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
     sp.preserve_paths =  'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
-end
+  end
 
-s.subspec 'no-arc' do |sp|
+  s.subspec 'no-arc' do |sp|
     sp.source_files = non_arc_files
     sp.requires_arc = false
-    sp.compiler_flags = '-w' # disable all warnings from asi-http-request
-end
+    # disable all warnings from asi-http-request
+    sp.compiler_flags = '-w'
+  end
 
-s.subspec 'GoogleCast' do |sp|  # Ensure this section is present
+  s.subspec 'GoogleCast' do |sp|
     cast_dir = "modules/google-cast"
 
     sp.dependency 'ConnectSDK/Core'
@@ -112,13 +114,11 @@ s.subspec 'GoogleCast' do |sp|  # Ensure this section is present
     sp.exclude_files = "#{cast_dir}/*Tests/**/*"
     sp.private_header_files = "#{cast_dir}/**/*_Private.h"
 
-    sp.preserve_paths = "#{cast_dir}/**/*"  # Ensure files are preserved
-
     cast_version = "2.7.1"
     sp.dependency "google-cast-sdk", cast_version
     sp.framework = "GoogleCast"
     sp.xcconfig = {
         "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/google-cast-sdk/GoogleCastSDK-#{cast_version}-Release",
     }
-end
+  end
 end
