@@ -413,6 +413,8 @@
 		FF7871682C84765D006AC33E /* M3U8PlaylistModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF78714B2C84765D006AC33E /* M3U8PlaylistModel.h */; };
 		FF7871692C84765D006AC33E /* M3U8PlaylistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF78714C2C84765D006AC33E /* M3U8PlaylistModel.m */; };
 		FF78716A2C84765D006AC33E /* M3U8TagsAndAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = FF78714D2C84765D006AC33E /* M3U8TagsAndAttributes.h */; };
+		FF8FF8882D40523F008A0F6F /* AmazonFling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF31AF2EBF5000FE655 /* AmazonFling.framework */; };
+		FF8FF88B2D405256008A0F6F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF41AF2EBF5000FE655 /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -926,7 +928,9 @@
 				EA61EBF018FE48E900D75696 /* SystemConfiguration.framework in Frameworks */,
 				EA61EB1418FE485B00D75696 /* Foundation.framework in Frameworks */,
 				22E63EB5293DD36D00080ECB /* GStreamerForLGCast.xcframework in Frameworks */,
+				FF8FF88B2D405256008A0F6F /* Bolts.framework in Frameworks */,
 				22E63EB6293DD36D00080ECB /* LGCast.xcframework in Frameworks */,
+				FF8FF8882D40523F008A0F6F /* AmazonFling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
