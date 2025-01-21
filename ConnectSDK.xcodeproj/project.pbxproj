@@ -61,8 +61,6 @@
 		44166C621B420C550052F9EC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EF618E1A12E0A400CF344C /* libz.dylib */; };
 		44166C631B420C860052F9EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA61EBF118FE48EF00D75696 /* MobileCoreServices.framework */; };
 		44166C641B420D960052F9EC /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4485140C1A02FC3200D66710 /* GoogleCast.framework */; };
-		44166C651B420DA60052F9EC /* AmazonFling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF31AF2EBF5000FE655 /* AmazonFling.framework */; };
-		44166C661B420DA60052F9EC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF41AF2EBF5000FE655 /* Bolts.framework */; };
 		44166C671B420DAD0052F9EC /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F051AF2F9AD000FE655 /* libc++.dylib */; };
 		44166C681B420DB50052F9EC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F071AF2F9BF000FE655 /* AdSupport.framework */; };
 		44166C691B420DC20052F9EC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EF619A1A12E23200CF344C /* libicucore.dylib */; };
@@ -81,8 +79,6 @@
 		44316EFE1AF2F04B000FE655 /* FireTVDiscoveryProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 44316EFC1AF2F04B000FE655 /* FireTVDiscoveryProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44316EFF1AF2F04B000FE655 /* FireTVDiscoveryProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 44316EFD1AF2F04B000FE655 /* FireTVDiscoveryProvider.m */; };
 		44316F021AF2F09B000FE655 /* FireTVDiscoveryProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44316F011AF2F09B000FE655 /* FireTVDiscoveryProviderTests.m */; };
-		44316F031AF2F77C000FE655 /* AmazonFling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF31AF2EBF5000FE655 /* AmazonFling.framework */; };
-		44316F041AF2F936000FE655 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF41AF2EBF5000FE655 /* Bolts.framework */; };
 		44316F061AF2F9AD000FE655 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F051AF2F9AD000FE655 /* libc++.dylib */; };
 		44316F081AF2F9BF000FE655 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F071AF2F9BF000FE655 /* AdSupport.framework */; };
 		44316F291AF3F17A000FE655 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F251AF3F17A000FE655 /* OCMock.framework */; };
@@ -137,8 +133,6 @@
 		449A37141B0FE30700E47DAC /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F251AF3F17A000FE655 /* OCMock.framework */; };
 		449A37151B0FE32E00E47DAC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EF619A1A12E23200CF344C /* libicucore.dylib */; };
 		449A37161B0FE33100E47DAC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EF618E1A12E0A400CF344C /* libz.dylib */; };
-		449A37171B0FE36E00E47DAC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF41AF2EBF5000FE655 /* Bolts.framework */; };
-		449A37181B0FE37100E47DAC /* AmazonFling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF31AF2EBF5000FE655 /* AmazonFling.framework */; };
 		449A37191B0FE37B00E47DAC /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F051AF2F9AD000FE655 /* libc++.dylib */; };
 		449A371A1B0FE38700E47DAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA61EBEF18FE48E900D75696 /* SystemConfiguration.framework */; };
 		449A371B1B0FE39700E47DAC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F071AF2F9BF000FE655 /* AdSupport.framework */; };
@@ -413,8 +407,8 @@
 		FF7871682C84765D006AC33E /* M3U8PlaylistModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF78714B2C84765D006AC33E /* M3U8PlaylistModel.h */; };
 		FF7871692C84765D006AC33E /* M3U8PlaylistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF78714C2C84765D006AC33E /* M3U8PlaylistModel.m */; };
 		FF78716A2C84765D006AC33E /* M3U8TagsAndAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = FF78714D2C84765D006AC33E /* M3U8TagsAndAttributes.h */; };
-		FF8FF8882D40523F008A0F6F /* AmazonFling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF31AF2EBF5000FE655 /* AmazonFling.framework */; };
-		FF8FF88B2D405256008A0F6F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF41AF2EBF5000FE655 /* Bolts.framework */; };
+		FF8FF88F2D405AD0008A0F6F /* AmazonFling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8FF88D2D405ACF008A0F6F /* AmazonFling.framework */; };
+		FF8FF8902D405AD0008A0F6F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8FF88E2D405ACF008A0F6F /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -503,8 +497,6 @@
 		442B9A431A153F240053AE51 /* SSDPDiscoveryProvider_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDPDiscoveryProvider_Private.h; sourceTree = "<group>"; };
 		443063BF1A4210F0007779DA /* AirPlayServiceHTTPKeepAlive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPlayServiceHTTPKeepAlive.h; sourceTree = "<group>"; };
 		443063C01A4210F0007779DA /* AirPlayServiceHTTPKeepAlive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPlayServiceHTTPKeepAlive.m; sourceTree = "<group>"; };
-		44316EF31AF2EBF5000FE655 /* AmazonFling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmazonFling.framework; sourceTree = "<group>"; };
-		44316EF41AF2EBF5000FE655 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		44316EFC1AF2F04B000FE655 /* FireTVDiscoveryProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireTVDiscoveryProvider.h; sourceTree = "<group>"; };
 		44316EFD1AF2F04B000FE655 /* FireTVDiscoveryProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireTVDiscoveryProvider.m; sourceTree = "<group>"; };
 		44316F011AF2F09B000FE655 /* FireTVDiscoveryProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireTVDiscoveryProviderTests.m; sourceTree = "<group>"; };
@@ -853,6 +845,8 @@
 		FF78714B2C84765D006AC33E /* M3U8PlaylistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8PlaylistModel.h; sourceTree = "<group>"; };
 		FF78714C2C84765D006AC33E /* M3U8PlaylistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3U8PlaylistModel.m; sourceTree = "<group>"; };
 		FF78714D2C84765D006AC33E /* M3U8TagsAndAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8TagsAndAttributes.h; sourceTree = "<group>"; };
+		FF8FF88D2D405ACF008A0F6F /* AmazonFling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AmazonFling.framework; path = modules/firetv/Frameworks/AmazonFling.framework; sourceTree = "<group>"; };
+		FF8FF88E2D405ACF008A0F6F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = modules/firetv/Frameworks/Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -866,12 +860,10 @@
 				44166C611B420C4E0052F9EC /* SystemConfiguration.framework in Frameworks */,
 				44166C561B4203880052F9EC /* libConnectSDK.a in Frameworks */,
 				44166C681B420DB50052F9EC /* AdSupport.framework in Frameworks */,
-				44166C661B420DA60052F9EC /* Bolts.framework in Frameworks */,
 				44166C5F1B420C270052F9EC /* Specta.framework in Frameworks */,
 				44166C671B420DAD0052F9EC /* libc++.dylib in Frameworks */,
 				44166C5E1B420C270052F9EC /* Expecta.framework in Frameworks */,
 				44166C691B420DC20052F9EC /* libicucore.dylib in Frameworks */,
-				44166C651B420DA60052F9EC /* AmazonFling.framework in Frameworks */,
 				44166C621B420C550052F9EC /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,12 +877,10 @@
 				44E98F601B1E63570043BC70 /* OHHTTPStubs.framework in Frameworks */,
 				44E98F5F1B1E63570043BC70 /* OCMock.framework in Frameworks */,
 				448085801A12A7BE00E13938 /* libConnectSDK.a in Frameworks */,
-				44316F031AF2F77C000FE655 /* AmazonFling.framework in Frameworks */,
 				44EF61951A12E18D00CF344C /* GoogleCast.framework in Frameworks */,
 				44EF61981A12E1C800CF344C /* MediaAccessibility.framework in Frameworks */,
 				44EF618D1A12E02700CF344C /* MobileCoreServices.framework in Frameworks */,
 				44EF61921A12E10500CF344C /* SystemConfiguration.framework in Frameworks */,
-				44316F041AF2F936000FE655 /* Bolts.framework in Frameworks */,
 				44EF619B1A12E23200CF344C /* libicucore.dylib in Frameworks */,
 				44316F2B1AF3F17A000FE655 /* OHHTTPStubs.framework in Frameworks */,
 				44316F291AF3F17A000FE655 /* OCMock.framework in Frameworks */,
@@ -913,8 +903,6 @@
 				449A371B1B0FE39700E47DAC /* AdSupport.framework in Frameworks */,
 				449A37121B0FE03400E47DAC /* Expecta.framework in Frameworks */,
 				449A371C1B0FE3A500E47DAC /* MobileCoreServices.framework in Frameworks */,
-				449A37171B0FE36E00E47DAC /* Bolts.framework in Frameworks */,
-				449A37181B0FE37100E47DAC /* AmazonFling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,9 +916,9 @@
 				EA61EBF018FE48E900D75696 /* SystemConfiguration.framework in Frameworks */,
 				EA61EB1418FE485B00D75696 /* Foundation.framework in Frameworks */,
 				22E63EB5293DD36D00080ECB /* GStreamerForLGCast.xcframework in Frameworks */,
-				FF8FF88B2D405256008A0F6F /* Bolts.framework in Frameworks */,
+				FF8FF88F2D405AD0008A0F6F /* AmazonFling.framework in Frameworks */,
+				FF8FF8902D405AD0008A0F6F /* Bolts.framework in Frameworks */,
 				22E63EB6293DD36D00080ECB /* LGCast.xcframework in Frameworks */,
-				FF8FF8882D40523F008A0F6F /* AmazonFling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,8 +1041,6 @@
 		44316EF11AF2EBF5000FE655 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				44316EF31AF2EBF5000FE655 /* AmazonFling.framework */,
-				44316EF41AF2EBF5000FE655 /* Bolts.framework */,
 				44316F071AF2F9BF000FE655 /* AdSupport.framework */,
 				44316F051AF2F9AD000FE655 /* libc++.dylib */,
 			);
@@ -1821,6 +1807,8 @@
 		EA61EB1218FE485B00D75696 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF8FF88D2D405ACF008A0F6F /* AmazonFling.framework */,
+				FF8FF88E2D405ACF008A0F6F /* Bolts.framework */,
 				22E63EB3293DD36C00080ECB /* GStreamerForLGCast.xcframework */,
 				22E63EB4293DD36C00080ECB /* LGCast.xcframework */,
 				44EF619A1A12E23200CF344C /* libicucore.dylib */,
