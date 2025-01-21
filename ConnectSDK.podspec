@@ -95,7 +95,7 @@ Pod::Spec.new do |s|
 
     sp.dependency 'ConnectSDK/no-arc'
     sp.dependency 'ConnectSDK/GoogleCast'
-    #sp.dependency 'ConnectSDK/FireTV'
+    sp.dependency 'ConnectSDK/FireTV'
     sp.ios.vendored_frameworks = 'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
     sp.preserve_paths =  'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
   end
@@ -124,16 +124,16 @@ Pod::Spec.new do |s|
   end
   
   # Fire TV Subspec
-#s.subspec 'FireTV' do |sp|
- # firetv_dir = "modules/firetv"
-  #sp.source_files = "#{firetv_dir}/**/*.{h,m}"
-  #sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
-  #sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
+s.subspec 'FireTV' do |sp|
+  firetv_dir = "modules/firetv"
+  sp.source_files = "#{firetv_dir}/**/*.{h,m}"
+  sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
+  sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
 
-  #sp.ios.vendored_frameworks = "modules/firetv/Frameworks/AmazonFling/AmazonFling.framework",
-  #                             "modules/firetv/Frameworks/Bolts.framework"
+  sp.ios.vendored_frameworks = "modules/firetv/Frameworks/AmazonFling/AmazonFling.framework",
+                               "modules/firetv/Frameworks/Bolts.framework"
 
-  #sp.preserve_paths = "modules/firetv/Frameworks/AmazonFling/AmazonFling.framework",
-   #                   "modules/firetv/Frameworks/Bolts.framework"
-#end
+  sp.preserve_paths = "modules/firetv/Frameworks/AmazonFling/AmazonFling.framework",
+                      "modules/firetv/Frameworks/Bolts.framework"
+end
 end
