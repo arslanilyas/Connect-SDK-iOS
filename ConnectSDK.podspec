@@ -130,10 +130,10 @@ s.subspec 'FireTV' do |sp|
   sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
   sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
 
-  sp.ios.vendored_frameworks = "modules/firetv/Frameworks/AmazonFling/AmazonFling.framework",
+  sp.ios.vendored_frameworks = "modules/firetv/Frameworks/AmazonFling.framework",
                                "modules/firetv/Frameworks/Bolts.framework"
 
-  sp.preserve_paths = "modules/firetv/Frameworks/AmazonFling/AmazonFling.framework",
+  sp.preserve_paths = "modules/firetv/Frameworks/AmazonFling.framework",
                       "modules/firetv/Frameworks/Bolts.framework"
 end
 end
