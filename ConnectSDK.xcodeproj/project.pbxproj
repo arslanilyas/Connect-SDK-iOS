@@ -407,8 +407,6 @@
 		FF7871682C84765D006AC33E /* M3U8PlaylistModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FF78714B2C84765D006AC33E /* M3U8PlaylistModel.h */; };
 		FF7871692C84765D006AC33E /* M3U8PlaylistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF78714C2C84765D006AC33E /* M3U8PlaylistModel.m */; };
 		FF78716A2C84765D006AC33E /* M3U8TagsAndAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = FF78714D2C84765D006AC33E /* M3U8TagsAndAttributes.h */; };
-		FF8FF8952D405E6F008A0F6F /* Bolts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8FF8942D405E6F008A0F6F /* Bolts.xcframework */; };
-		FF8FF8962D405E6F008A0F6F /* AmazonFling.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8FF8932D405E6F008A0F6F /* AmazonFling.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -845,8 +843,6 @@
 		FF78714B2C84765D006AC33E /* M3U8PlaylistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8PlaylistModel.h; sourceTree = "<group>"; };
 		FF78714C2C84765D006AC33E /* M3U8PlaylistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3U8PlaylistModel.m; sourceTree = "<group>"; };
 		FF78714D2C84765D006AC33E /* M3U8TagsAndAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8TagsAndAttributes.h; sourceTree = "<group>"; };
-		FF8FF8932D405E6F008A0F6F /* AmazonFling.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AmazonFling.xcframework; path = modules/firetv/Frameworks/AmazonFling.xcframework; sourceTree = "<group>"; };
-		FF8FF8942D405E6F008A0F6F /* Bolts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Bolts.xcframework; path = modules/firetv/Frameworks/Bolts.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -910,8 +906,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF8FF8952D405E6F008A0F6F /* Bolts.xcframework in Frameworks */,
-				FF8FF8962D405E6F008A0F6F /* AmazonFling.xcframework in Frameworks */,
 				EAD7F8601906E99C00B33AAB /* UIKit.framework in Frameworks */,
 				EAD7F85E1906E98200B33AAB /* AVFoundation.framework in Frameworks */,
 				EA61EBF218FE48EF00D75696 /* MobileCoreServices.framework in Frameworks */,
@@ -1807,8 +1801,6 @@
 		EA61EB1218FE485B00D75696 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FF8FF8932D405E6F008A0F6F /* AmazonFling.xcframework */,
-				FF8FF8942D405E6F008A0F6F /* Bolts.xcframework */,
 				22E63EB3293DD36C00080ECB /* GStreamerForLGCast.xcframework */,
 				22E63EB4293DD36C00080ECB /* LGCast.xcframework */,
 				44EF619A1A12E23200CF344C /* libicucore.dylib */,
