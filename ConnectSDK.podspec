@@ -95,7 +95,7 @@ Pod::Spec.new do |s|
 
     sp.dependency 'ConnectSDK/no-arc'
     sp.dependency 'ConnectSDK/GoogleCast'
-    #sp.dependency 'ConnectSDK/FireTV'
+    sp.dependency 'ConnectSDK/FireTV'
 
     sp.ios.vendored_frameworks = 'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
     sp.preserve_paths =  'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
