@@ -40,6 +40,22 @@ Pod::Spec.new do |s|
   }
 
   s.requires_arc = true
+
+# Move prepare_command to the parent spec
+  s.prepare_command = <<-CMD
+    mkdir -p modules/firetv/Frameworks
+
+    # Download and unzip AmazonFling.framework
+    curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.framework.zip
+    unzip AmazonFling.zip -d modules/firetv/Frameworks
+    rm AmazonFling.zip
+
+    # Download and unzip Bolts.framework
+    curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.framework.zip
+    unzip Bolts.zip -d modules/firetv/Frameworks
+    rm Bolts.zip
+  CMD
+
   s.libraries = "z", "icucore"
   s.prefix_header_contents = <<-PREFIX
                                   //
@@ -139,20 +155,5 @@ s.subspec 'FireTV' do |sp|
 
     # Preserve paths for frameworks
     sp.preserve_paths = "#{frameworks_dir}/AmazonFling.framework", "#{frameworks_dir}/Bolts.framework"
-
-    # Download and unzip frameworks into the specified directory
-    sp.prepare_command = <<-CMD
-      mkdir -p #{frameworks_dir}
-      
-      # Download and unzip AmazonFling.framework
-      curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.framework.zip
-      unzip AmazonFling.zip -d #{frameworks_dir}
-      rm AmazonFling.zip
-      
-      # Download and unzip Bolts.framework
-      curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.framework.zip
-      unzip Bolts.zip -d #{frameworks_dir}
-      rm Bolts.zip
-    CMD
   end
 end
