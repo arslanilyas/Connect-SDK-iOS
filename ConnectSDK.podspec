@@ -126,15 +126,33 @@ Pod::Spec.new do |s|
   
   # Fire TV Subspec
 s.subspec 'FireTV' do |sp|
-  firetv_dir = "modules/firetv"
-  sp.source_files = "#{firetv_dir}/**/*.{h,m}"
-  sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
-  sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
+    firetv_dir = "modules/firetv"
+    frameworks_dir = "#{firetv_dir}/Frameworks"
 
-  # Add both AmazonFling and Bolts frameworks
-  sp.ios.vendored_frameworks = 'https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.framework',
-                                'https://github.com/arslanilyas/frameworks/raw/main/Bolts.framework'
-  sp.preserve_paths = 'https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.framework',
-                      'https://github.com/arslanilyas/frameworks/raw/main/Bolts.framework'
-end
+    # Source files for the FireTV code
+    sp.source_files = "#{firetv_dir}/**/*.{h,m}"
+    sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
+    sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
+
+    # Frameworks for FireTV
+    sp.ios.vendored_frameworks = "#{frameworks_dir}/AmazonFling.framework", "#{frameworks_dir}/Bolts.framework"
+
+    # Preserve paths for frameworks
+    sp.preserve_paths = "#{frameworks_dir}/AmazonFling.framework", "#{frameworks_dir}/Bolts.framework"
+
+    # Download and unzip frameworks into the specified directory
+    sp.prepare_command = <<-CMD
+      mkdir -p #{frameworks_dir}
+      
+      # Download and unzip AmazonFling.framework
+      curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.framework.zip
+      unzip AmazonFling.zip -d #{frameworks_dir}
+      rm AmazonFling.zip
+      
+      # Download and unzip Bolts.framework
+      curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.framework.zip
+      unzip Bolts.zip -d #{frameworks_dir}
+      rm Bolts.zip
+    CMD
+  end
 end
