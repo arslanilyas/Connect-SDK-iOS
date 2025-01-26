@@ -40,22 +40,6 @@ Pod::Spec.new do |s|
   }
 
   s.requires_arc = true
-
-# Prepare command for downloading and unzipping frameworks
-s.prepare_command = <<-CMD
-  mkdir -p modules/firetv/Frameworks
-
-  # Download and unzip AmazonFling.xcframework
-  curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.xcframework.zip
-  unzip -o AmazonFling.zip -d modules/firetv/Frameworks
-  rm AmazonFling.zip
-
-  # Download and unzip Bolts.xcframework
-  curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.xcframework.zip
-  unzip -o Bolts.zip -d modules/firetv/Frameworks
-  rm Bolts.zip
-CMD
-
   s.libraries = "z", "icucore"
   s.prefix_header_contents = <<-PREFIX
                                   //
@@ -140,7 +124,22 @@ CMD
     }
   end
   
-  # Fire TV Subspec
+  # Prepare command for downloading and unzipping frameworks
+s.prepare_command = <<-CMD
+  set -e
+  mkdir -p modules/firetv/Frameworks
+
+  # Download and unzip AmazonFling.xcframework
+  curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.xcframework.zip
+  unzip -o AmazonFling.zip -d modules/firetv/Frameworks
+  rm AmazonFling.zip
+
+  # Download and unzip Bolts.xcframework
+  curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.xcframework.zip
+  unzip -o Bolts.zip -d modules/firetv/Frameworks
+  rm Bolts.zip
+CMD
+
 # Fire TV Subspec
 s.subspec 'FireTV' do |sp|
   firetv_dir = "modules/firetv"
