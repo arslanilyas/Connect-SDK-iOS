@@ -154,7 +154,8 @@ s.subspec 'FireTV' do |sp|
 
   # Source files for the FireTV code
   sp.source_files = "#{firetv_dir}/**/*.{h,m}"
-  sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
+  sp.exclude_files = "#{firetv_dir}/*Tests/**/*", 
+                     "#{frameworks_dir}/**/*"
   sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
 
   # Frameworks for FireTV
