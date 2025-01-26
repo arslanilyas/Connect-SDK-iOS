@@ -125,6 +125,7 @@ Pod::Spec.new do |s|
   end
   
   # Prepare command for downloading and unzipping frameworks
+
 s.prepare_command = <<-CMD
   set -e
   mkdir -p modules/firetv/Frameworks
@@ -132,15 +133,18 @@ s.prepare_command = <<-CMD
   # Download and unzip AmazonFling.xcframework
   curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.xcframework.zip
   unzip -o AmazonFling.zip -d modules/firetv/Frameworks
-  mv modules/firetv/Frameworks/AmazonFling.xcframework/* modules/firetv/Frameworks/AmazonFling.xcframework 2>/dev/null || true
+  mv modules/firetv/Frameworks/AmazonFling.xcframework/* modules/firetv/Frameworks/AmazonFling.xcframework/ 2>/dev/null || true
+  rm -rf modules/firetv/Frameworks/AmazonFling
   rm AmazonFling.zip
 
   # Download and unzip Bolts.xcframework
   curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.xcframework.zip
   unzip -o Bolts.zip -d modules/firetv/Frameworks
-  mv modules/firetv/Frameworks/Bolts.xcframework/* modules/firetv/Frameworks/Bolts.xcframework 2>/dev/null || true
+  mv modules/firetv/Frameworks/Bolts.xcframework/* modules/firetv/Frameworks/Bolts.xcframework/ 2>/dev/null || true
+  rm -rf modules/firetv/Frameworks/Bolts
   rm Bolts.zip
 CMD
+
 
 
 # Fire TV Subspec
