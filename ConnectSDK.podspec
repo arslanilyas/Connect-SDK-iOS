@@ -130,21 +130,21 @@ s.prepare_command = <<-CMD
   set -e
   mkdir -p modules/firetv/Frameworks
 
-  # Download and unzip AmazonFling.xcframework
-  curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.xcframework.zip
+  # Download and unzip AmazonFling.framework
+  curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.framework.zip
   unzip -o AmazonFling.zip -d modules/firetv/Frameworks
-  mv modules/firetv/Frameworks/AmazonFling.xcframework/* modules/firetv/Frameworks/AmazonFling.xcframework/ 2>/dev/null || true
-  mv modules/firetv/Frameworks/AmazonFling.xcframework/AmazonFling/* modules/firetv/Frameworks/AmazonFling.xcframework/Headers/ 2>/dev/null || true
-  rm -rf modules/firetv/Frameworks/AmazonFling.xcframework/AmazonFling
+  mv modules/firetv/Frameworks/AmazonFling.framework/* modules/firetv/Frameworks/AmazonFling.framework/ 2>/dev/null || true
+  rm -rf modules/firetv/Frameworks/AmazonFling.framework/__MACOSX
   rm AmazonFling.zip
 
-  # Download and unzip Bolts.xcframework
-  curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.xcframework.zip
+  # Download and unzip Bolts.framework
+  curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.framework.zip
   unzip -o Bolts.zip -d modules/firetv/Frameworks
-  mv modules/firetv/Frameworks/Bolts.xcframework/* modules/firetv/Frameworks/Bolts.xcframework/ 2>/dev/null || true
-  rm -rf modules/firetv/Frameworks/Bolts
+  mv modules/firetv/Frameworks/Bolts.framework/* modules/firetv/Frameworks/Bolts.framework/ 2>/dev/null || true
+  rm -rf modules/firetv/Frameworks/Bolts.framework/__MACOSX
   rm Bolts.zip
 CMD
+
 
 # Fire TV Subspec
 s.subspec 'FireTV' do |sp|
@@ -160,11 +160,12 @@ s.subspec 'FireTV' do |sp|
   sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
 
   # Frameworks for FireTV
-  sp.ios.vendored_frameworks = "#{frameworks_dir}/AmazonFling.xcframework", 
-                               "#{frameworks_dir}/Bolts.xcframework"
+  sp.ios.vendored_frameworks = "#{frameworks_dir}/AmazonFling.framework", 
+                               "#{frameworks_dir}/Bolts.framework"
 
   # Preserve paths for frameworks
-  sp.preserve_paths = "#{frameworks_dir}/AmazonFling.xcframework", 
-                      "#{frameworks_dir}/Bolts.xcframework"
+  sp.preserve_paths = "#{frameworks_dir}/AmazonFling.framework", 
+                      "#{frameworks_dir}/Bolts.framework"
 end
+
 end
