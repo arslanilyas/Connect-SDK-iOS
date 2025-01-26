@@ -45,16 +45,20 @@ Pod::Spec.new do |s|
   s.prepare_command = <<-CMD
     mkdir -p modules/firetv/Frameworks
 
-    # Download and unzip AmazonFling.framework
-    curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.framework.zip
-    unzip AmazonFling.zip -d modules/firetv/Frameworks
-    rm AmazonFling.zip
+    # Move prepare_command to the parent spec
+s.prepare_command = <<-CMD
+  mkdir -p modules/firetv/Frameworks
 
-    # Download and unzip Bolts.framework
-    curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.framework.zip
-    unzip Bolts.zip -d modules/firetv/Frameworks
-    rm Bolts.zip
-  CMD
+  # Download and unzip AmazonFling.xcframework
+  curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.xcframework.zip
+  unzip -o AmazonFling.zip -d modules/firetv/Frameworks
+  rm AmazonFling.zip
+
+  # Download and unzip Bolts.xcframework
+  curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.xcframework.zip
+  unzip -o Bolts.zip -d modules/firetv/Frameworks
+  rm Bolts.zip
+CMD
 
   s.libraries = "z", "icucore"
   s.prefix_header_contents = <<-PREFIX
@@ -141,19 +145,22 @@ Pod::Spec.new do |s|
   end
   
   # Fire TV Subspec
+# Fire TV Subspec
 s.subspec 'FireTV' do |sp|
-    firetv_dir = "modules/firetv"
-    frameworks_dir = "#{firetv_dir}/Frameworks"
+  firetv_dir = "modules/firetv"
+  frameworks_dir = "#{firetv_dir}/Frameworks"
 
-    # Source files for the FireTV code
-    sp.source_files = "#{firetv_dir}/**/*.{h,m}"
-    sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
-    sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
+  # Source files for the FireTV code
+  sp.source_files = "#{firetv_dir}/**/*.{h,m}"
+  sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
+  sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
 
-    # Frameworks for FireTV
-    sp.ios.vendored_frameworks = "#{frameworks_dir}/AmazonFling.framework", "#{frameworks_dir}/Bolts.framework"
+  # Frameworks for FireTV (now referencing .xcframework)
+  sp.ios.vendored_frameworks = "#{frameworks_dir}/AmazonFling.xcframework", 
+                               "#{frameworks_dir}/Bolts.xcframework"
 
-    # Preserve paths for frameworks
-    sp.preserve_paths = "#{frameworks_dir}/AmazonFling.framework", "#{frameworks_dir}/Bolts.framework"
-  end
+  # Preserve paths for frameworks
+  sp.preserve_paths = "#{frameworks_dir}/AmazonFling.xcframework", 
+                      "#{frameworks_dir}/Bolts.xcframework"
+end
 end
