@@ -41,11 +41,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-# Move prepare_command to the parent spec
-  s.prepare_command = <<-CMD
-    mkdir -p modules/firetv/Frameworks
-
-    # Move prepare_command to the parent spec
+# Prepare command for downloading and unzipping frameworks
 s.prepare_command = <<-CMD
   mkdir -p modules/firetv/Frameworks
 
@@ -155,7 +151,7 @@ s.subspec 'FireTV' do |sp|
   sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
   sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
 
-  # Frameworks for FireTV (now referencing .xcframework)
+  # Frameworks for FireTV
   sp.ios.vendored_frameworks = "#{frameworks_dir}/AmazonFling.xcframework", 
                                "#{frameworks_dir}/Bolts.xcframework"
 
