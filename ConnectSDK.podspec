@@ -133,17 +133,18 @@ s.prepare_command = <<-CMD
   # Download and unzip AmazonFling.xcframework
   curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.xcframework.zip
   unzip -o AmazonFling.zip -d modules/firetv/Frameworks
-  mv modules/firetv/Frameworks/AmazonFling.xcframework/* modules/firetv/Frameworks/AmazonFling.xcframework/ 2>/dev/null || true
+  mv modules/firetv/Frameworks/AmazonFling/* modules/firetv/Frameworks/AmazonFling.xcframework 2>/dev/null || true
   rm -rf modules/firetv/Frameworks/AmazonFling
   rm AmazonFling.zip
 
   # Download and unzip Bolts.xcframework
   curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.xcframework.zip
   unzip -o Bolts.zip -d modules/firetv/Frameworks
-  mv modules/firetv/Frameworks/Bolts.xcframework/* modules/firetv/Frameworks/Bolts.xcframework/ 2>/dev/null || true
+  mv modules/firetv/Frameworks/Bolts/* modules/firetv/Frameworks/Bolts.xcframework 2>/dev/null || true
   rm -rf modules/firetv/Frameworks/Bolts
   rm Bolts.zip
 CMD
+
 
 
 
@@ -154,8 +155,7 @@ s.subspec 'FireTV' do |sp|
 
   # Source files for the FireTV code
   sp.source_files = "#{firetv_dir}/**/*.{h,m}"
-  sp.exclude_files = "#{firetv_dir}/*Tests/**/*", 
-                     "#{frameworks_dir}/**/*"
+  sp.exclude_files = "#{firetv_dir}/*Tests/**/*"
   sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
 
   # Frameworks for FireTV
