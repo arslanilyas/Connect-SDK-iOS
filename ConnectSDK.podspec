@@ -131,12 +131,14 @@ s.prepare_command = <<-CMD
 
   # Download and unzip AmazonFling.xcframework
   curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.xcframework.zip
-  unzip -o AmazonFling.zip -d modules/firetv/Frameworks
+  mkdir -p modules/firetv/Frameworks/AmazonFling.xcframework
+  unzip -o AmazonFling.zip -d modules/firetv/Frameworks/AmazonFling.xcframework
   rm AmazonFling.zip
 
   # Download and unzip Bolts.xcframework
   curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.xcframework.zip
-  unzip -o Bolts.zip -d modules/firetv/Frameworks
+  mkdir -p modules/firetv/Frameworks/Bolts.xcframework
+  unzip -o Bolts.zip -d modules/firetv/Frameworks/Bolts.xcframework
   rm Bolts.zip
 CMD
 
