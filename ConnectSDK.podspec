@@ -106,22 +106,6 @@ Pod::Spec.new do |s|
     # disable all warnings from asi-http-request
     sp.compiler_flags = '-w'
   end
-
-  s.subspec 'GoogleCast' do |sp|
-    cast_dir = "modules/google-cast"
-
-    # sp.dependency 'ConnectSDK/Core'
-    sp.source_files = "#{cast_dir}/**/*.{h,m}"
-    sp.exclude_files = "#{cast_dir}/*Tests/**/*"
-    sp.private_header_files = "#{cast_dir}/**/*_Private.h"
-
-    cast_version = "2.7.1"
-    sp.dependency "google-cast-sdk", cast_version
-    sp.framework = "GoogleCast"
-    sp.xcconfig = {
-        "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/google-cast-sdk/GoogleCastSDK-#{cast_version}-Release",
-    }
-  end
   
   # Prepare command for downloading and unzipping frameworks
 
