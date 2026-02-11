@@ -94,8 +94,6 @@ Pod::Spec.new do |s|
     sp.requires_arc = true
 
     sp.dependency 'ConnectSDK/no-arc'
-    sp.dependency 'ConnectSDK/GoogleCast'
-    sp.dependency 'ConnectSDK/FireTV'
 
     sp.ios.vendored_frameworks = 'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
     sp.preserve_paths =  'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
@@ -107,65 +105,7 @@ Pod::Spec.new do |s|
     # disable all warnings from asi-http-request
     sp.compiler_flags = '-w'
   end
-
-  s.subspec 'GoogleCast' do |sp|
-    cast_dir = "modules/google-cast"
-
-    # sp.dependency 'ConnectSDK/Core'
-    sp.source_files = "#{cast_dir}/**/*.{h,m}"
-    sp.exclude_files = "#{cast_dir}/*Tests/**/*"
-    sp.private_header_files = "#{cast_dir}/**/*_Private.h"
-
-    cast_version = "2.10.4"
-    sp.dependency "google-cast-sdk", cast_version
-    sp.framework = "GoogleCast"
-    sp.xcconfig = {
-        "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/google-cast-sdk/GoogleCastSDK-#{cast_version}-Release",
-    }
-  end
   
   # Prepare command for downloading and unzipping frameworks
-
-s.prepare_command = <<-CMD
-  set -e
-  mkdir -p modules/firetv/Frameworks
-
-  # Download and unzip AmazonFling.framework
-  curl -L -o AmazonFling.zip https://github.com/arslanilyas/frameworks/raw/main/AmazonFling.framework.zip
-  unzip -o AmazonFling.zip -d modules/firetv/Frameworks
-  mv modules/firetv/Frameworks/AmazonFling.framework/* modules/firetv/Frameworks/AmazonFling.framework/ 2>/dev/null || true
-  rm -rf modules/firetv/Frameworks/AmazonFling.framework/__MACOSX
-  rm AmazonFling.zip
-
-  # Download and unzip Bolts.framework
-  curl -L -o Bolts.zip https://github.com/arslanilyas/frameworks/raw/main/Bolts.framework.zip
-  unzip -o Bolts.zip -d modules/firetv/Frameworks
-  mv modules/firetv/Frameworks/Bolts.framework/* modules/firetv/Frameworks/Bolts.framework/ 2>/dev/null || true
-  rm -rf modules/firetv/Frameworks/Bolts.framework/__MACOSX
-  rm Bolts.zip
-CMD
-
-
-# Fire TV Subspec
-s.subspec 'FireTV' do |sp|
-  firetv_dir = "modules/firetv"
-  frameworks_dir = "#{firetv_dir}/Frameworks"
-
-  # Source files for the FireTV code
-  sp.source_files = "#{firetv_dir}/**/*.{h,m}"
-  sp.exclude_files = [
-    "#{frameworks_dir}/**/*.h", # Exclude framework headers
-    "#{firetv_dir}/*Tests/**/*" # Exclude test files
-  ]
-  sp.private_header_files = "#{firetv_dir}/**/*_Private.h"
-
-  # Frameworks for FireTV
-  sp.ios.vendored_frameworks = "#{frameworks_dir}/AmazonFling.framework", 
-                               "#{frameworks_dir}/Bolts.framework"
-
-  # Preserve paths for frameworks
-  sp.preserve_paths = "#{frameworks_dir}/AmazonFling.framework", 
-                      "#{frameworks_dir}/Bolts.framework"
-end
 
 end
